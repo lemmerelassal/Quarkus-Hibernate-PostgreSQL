@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc";
+option java_outer_classname = "HelloProto";
+
+package hello;
+
+service HelloGrpcService {
+    rpc GetAtomNames (AtomNameRequest) returns (AtomNameResponse);
+}
+
+message AtomNameRequest {
+    // empty — no parameters needed
+}
+
+message AtomNameResponse {
+    repeated string atom_names = 1;
+}
